@@ -64,6 +64,14 @@
   brew install autojump gh git openssh zsh
   ```
 
+- 检查 formulae 更新
+
+  ```bash
+  brew update
+  brew outdated
+  brew upgrade
+  ```
+
 - 启用 cask 更新检查
 
   ```bash
