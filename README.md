@@ -96,3 +96,21 @@
   brew cleanup
   brew cleanup -s --prune=all
   ```
+
+## GitHub
+
+- 配置 SSH Key
+
+  ```bash
+  ssh-keygen -t ed25519 -C "your_email@example.com"
+  ```
+
+- 配置 GitHub 账号
+
+  ```bash
+  gh auth login
+  git config --global user.name "your_name"
+  git config --global user.email "your_email@example.com"
+  git config --global user.signingkey 3AA5C34371567BD2
+  git config --global commit.gpgsign true
+  ```
