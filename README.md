@@ -50,6 +50,14 @@
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   ```
 
+## Screenshots
+
+- 修改截图文件名前缀
+
+  ```bash
+  defaults write com.apple.screencapture name "screenshot-"
+  ```
+
 ## Homebrew
 
 - 安装 Homebrew [官方网站](https://brew.sh/zh-cn/)
