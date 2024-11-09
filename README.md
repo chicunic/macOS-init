@@ -139,6 +139,12 @@
   ssh-keygen -t ed25519 -C "your_email@example.com"
   ```
 
+  列出 GPG Key
+
+  ```bash
+  gpg --list-secret-keys --keyid-format=long
+  ```
+
 - 配置 GitHub 账号
 
   ```bash
