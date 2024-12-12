@@ -7,13 +7,13 @@
 - 还原 LaunchPad 图标布局
 
   ```bash
-  defaults write com.apple.dock ResetLaunchPad -bool yes; killall Dock
+  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
   ```
 
 - 锁定 Dock 栏位置 (左边 / 底部 / 右边)
 
   ```bash
-  defaults write com.apple.Dock position-immutable -bool yes; killall Dock
+  defaults write com.apple.Dock position-immutable -bool true; killall Dock
   ```
 
 - 设置 Dock 栏高度
@@ -25,13 +25,13 @@
 - 锁定 Dock 栏高度
 
   ```bash
-  defaults write com.apple.Dock size-immutable -bool yes; killall Dock
+  defaults write com.apple.Dock size-immutable -bool true; killall Dock
   ```
 
 - 锁定 Dock 栏图标内容
 
   ```bash
-  defaults write com.apple.Dock contents-immutable -bool yes; killall Dock
+  defaults write com.apple.Dock contents-immutable -bool true; killall Dock
   ```
 
 ## Screenshots
