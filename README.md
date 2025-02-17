@@ -28,7 +28,7 @@
   defaults write com.apple.Dock size-immutable -bool true; killall Dock
   ```
 
-- 锁定 Dock 栏图标内容
+- 锁定 Dock 栏图标内容 (可选)
 
   ```bash
   defaults write com.apple.Dock contents-immutable -bool true; killall Dock
@@ -62,6 +62,12 @@
   xcode-select --install
   ```
 
+- 查看 Xcode Command Line Tools 路径
+
+  ```bash
+  xcode-select -p
+  ```
+
 ## oh-my-zsh
 
 - 安装 oh-my-zsh [官方网站](https://ohmyz.sh/#install)
@@ -76,6 +82,13 @@
 
   ```bash
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
+
+- 配置环境变量
+
+  ```bash
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
   ```
 
 - 安装常用的 formulae
@@ -107,7 +120,7 @@
 - 安装常用的 cask
 
   ```bash
-  brew install adobe-acrobat-reader appcleaner cloudflare-warp google-chrome iina iterm2 keka kekaexternalhelper
+  brew install adobe-acrobat-reader appcleaner google-chrome iina iterm2 keka kekaexternalhelper
   ```
 
 - 清理 Homebrew 缓存
@@ -121,15 +134,15 @@
 
 - 配置关闭所有窗口时退出 iTerm2
 
-  iTerm2 -> Preferences -> General -> Closing, 选中 Quit when all windows are closed
+  iTerm2 -> Settings -> General -> Closing, 选中 Quit when all windows are closed
 
 - 禁用鼠标点击选中命令
 
-  iTerm2 -> General -> Selection, 取消选中 Click on a command selects it to restrict Find and Filter
+  iTerm2 -> Settings -> General -> Selection, 取消选中 Click on a command selects it to restrict Find and Filter
 
 - 修改主题颜色为黑色
 
-  iTerm2 -> Preferences -> Profiles -> Colors, 选中 Use different colors for light mode and dark mode, 选择 Dark Mode, 然后取消选中 Use different colors for light mode and dark mode
+  iTerm2 -> Settings -> Preferences -> Profiles -> Colors, 取消选中 Use different colors for light mode and dark mode, Color Presets 选择 Dark Background
 
 ## GitHub
 
