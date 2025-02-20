@@ -4,7 +4,7 @@
 
 ## LaunchPad
 
-- 还原 LaunchPad 图标布局
+- 还原 LaunchPad 图标布局 (无效)
 
   ```bash
   defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
@@ -45,6 +45,7 @@
 - 修改截图文件保存路径
 
   ```bash
+  mkdir -p ~/Pictures/Screenshots
   defaults write com.apple.screencapture location ~/Pictures/Screenshots
   ```
 
@@ -142,7 +143,7 @@
 
 - 修改主题颜色为黑色
 
-  iTerm2 -> Settings -> Preferences -> Profiles -> Colors, 取消选中 Use different colors for light mode and dark mode, Color Presets 选择 Dark Background
+  iTerm2 -> Settings -> Profiles -> Colors, 取消选中 Use different colors for light mode and dark mode, Color Presets 选择 Dark Background
 
 ## GitHub
 
