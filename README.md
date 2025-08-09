@@ -88,6 +88,7 @@
 - 配置环境变量
 
   ```bash
+  echo >> ~/.zprofile
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
   ```
@@ -95,7 +96,7 @@
 - 安装常用的 formulae
 
   ```bash
-  brew install autojump gh git openssh zsh
+  brew install autojump curl gh git go node openssh wget zsh
   ```
 
 - 检查 formulae 更新
@@ -167,6 +168,7 @@
   git config --global user.email "your_email@example.com"
   git config --global user.signingkey 0123456789ABCDEF
   git config --global commit.gpgsign true
+  git config --global init.defaultBranch main
   ```
 
 ## 安装常用字体
