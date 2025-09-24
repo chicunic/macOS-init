@@ -4,12 +4,6 @@
 
 ## LaunchPad
 
-- 还原 LaunchPad 图标布局 (无效)
-
-  ```bash
-  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
-  ```
-
 - 锁定 Dock 栏位置 (左边 / 底部 / 右边)
 
   ```bash
@@ -26,12 +20,6 @@
 
   ```bash
   defaults write com.apple.Dock size-immutable -bool true; killall Dock
-  ```
-
-- 锁定 Dock 栏图标内容 (可选)
-
-  ```bash
-  defaults write com.apple.Dock contents-immutable -bool true; killall Dock
   ```
 
 ## Screenshots
@@ -53,9 +41,9 @@
 
 - 安装 Xcode
 
-  - 通过 AppStore 安装(推荐) [Xcode](https://apps.apple.com/us/app/xcode/id497799835?l=zh-Hans-CN&mt=12)
+  - 通过 AppStore 安装 (推荐) [Xcode](https://apps.apple.com/us/app/xcode/id497799835?l=zh-Hans-CN&mt=12)
 
-  - 下载安装包(不推荐) [官方网站](https://developer.apple.com/cn/xcode/)
+  - 下载安装包 (不推荐) [官方网站](https://developer.apple.com/cn/xcode/)
 
 - 安装 Xcode Command Line Tools
 
@@ -68,6 +56,16 @@
   ```bash
   xcode-select -p
   ```
+
+## Settings
+
+- Spotlight -> 取消选中 Help Apple Improve Search
+
+- Spotlight -> Results from System -> 取消选中 iPhone Apps
+
+- Sound -> 取消选中 Play sound on startup
+
+- Privacy & Security -> Accessories -> Always ask
 
 ## oh-my-zsh
 
@@ -96,7 +94,7 @@
 - 安装常用的 formulae
 
   ```bash
-  brew install autojump curl gh git go node openssh wget zsh
+  brew install autojump gh go node tree wget
   ```
 
 - 检查 formulae 更新
@@ -122,7 +120,35 @@
 - 安装常用的 cask
 
   ```bash
-  brew install adobe-acrobat-reader appcleaner google-chrome iina iterm2 keka kekaexternalhelper
+  brew install google-chrome
+  ```
+
+- 其他推荐的 cask
+
+  ```bash
+  adobe-acrobat-reader
+  aldente
+  android-platform-tools
+  appcleaner
+  chatgpt
+  claude
+  coconutbattery
+  font-inconsolata
+  font-meslo-for-powerlevel10k
+  font-roboto
+  google-chrome
+  google-drive
+  gpg-suite
+  iina
+  iterm2
+  keka
+  kekaexternalhelper
+  notion
+  onedrive
+  stats
+  typora@dev
+  visual-studio-code
+  vnc-viewer
   ```
 
 - 清理 Homebrew 缓存
@@ -136,15 +162,19 @@
 
 - 配置关闭所有窗口时退出 iTerm2
 
-  iTerm2 -> Settings -> General -> Closing, 选中 Quit when all windows are closed
+  Settings -> General -> Closing, 选中 Quit when all windows are closed
 
 - 禁用鼠标点击选中命令
 
-  iTerm2 -> Settings -> General -> Selection, 取消选中 Click on a command selects it to restrict Find and Filter
+  Settings -> General -> Selection, 取消选中 Click on a command selects it to restrict Find and Filter
+
+- 禁用记住尺寸和位置
+
+  Settings -> General -> Window, 取消选中 Remember the size and position of previously closed windows
 
 - 修改主题颜色为黑色
 
-  iTerm2 -> Settings -> Profiles -> Colors, 取消选中 Use different colors for light mode and dark mode, Color Presets 选择 Dark Background
+  Settings -> Profiles -> Colors, 取消选中 Use separate colors for light and dark mode, Color Presets 选择 Dark Background
 
 ## GitHub
 
@@ -200,7 +230,7 @@
 - 通过 oh-my-zsh 安装(推荐)
 
   ```bash
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
   ```
 
   Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
