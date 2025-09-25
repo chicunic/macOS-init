@@ -94,7 +94,7 @@
 - 安装常用的 formulae
 
   ```bash
-  brew install autojump gh go node tree wget
+  brew install autojump gh go java node tree wget
   ```
 
 - 检查 formulae 更新
