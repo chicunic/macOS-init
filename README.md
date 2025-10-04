@@ -94,7 +94,13 @@
 - 安装常用的 formulae
 
   ```bash
-  brew install autojump gh go java node tree wget
+  brew install autojump gh tree wget
+  ```
+
+- 安装更多开发工具
+
+  ```bash
+  brew install golangci-lint gopls grpcurl node openjdk protoc-gen-go protoc-gen-go-grpc staticcheck swag
   ```
 
 - 检查 formulae 更新
