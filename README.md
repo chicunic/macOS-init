@@ -94,7 +94,13 @@
 - 安装常用的 formulae
 
   ```bash
-  brew install autojump gh go node tree wget
+  brew install autojump gh tree wget
+  ```
+
+- 安装更多开发工具
+
+  ```bash
+  brew install golangci-lint gopls grpcurl node openjdk protoc-gen-go protoc-gen-go-grpc staticcheck swag
   ```
 
 - 检查 formulae 更新
@@ -175,6 +181,10 @@
 - 修改主题颜色为黑色
 
   Settings -> Profiles -> Colors, 取消选中 Use separate colors for light and dark mode, Color Presets 选择 Dark Background
+
+- 修改 locale 为 English (US)
+
+  Settings -> Profiles -> Terminal -> Environment, 选择 Use custom locale..., 点击 Change, 选择 English (United States), UTF-8
 
 ## GitHub
 
