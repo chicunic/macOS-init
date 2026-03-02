@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# AI Agents
+.claude/
+.cursor/
+.windsurf/
+.codeium/
+.continue/
+.aider*
+.copilot/
+.github/copilot/
+.tabnine/
+.cody/
+.augment/
+.devin/
+.v0/
+.gemini/
