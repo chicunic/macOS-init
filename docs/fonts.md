@@ -1,55 +1,75 @@
 # Fonts
 
-## [Source Han Sans](https://github.com/adobe-fonts/source-han-sans)
+Install fonts with [Homebrew](homebrew.md).
+
+## Install All Fonts
 
 ```bash
-brew install font-source-han-sans-vf
+brew install --cask font-source-han-sans-vf font-source-han-serif-vf font-inconsolata font-roboto font-meslo-for-powerlevel10k font-jetbrains-mono font-fira-code font-inter font-noto-sans-cjk
 ```
 
-## [Source Han Serif](https://github.com/adobe-fonts/source-han-serif)
+## Source Han Sans
 
 ```bash
-brew install font-source-han-serif-vf
+brew install --cask font-source-han-sans-vf
 ```
 
-## [Inconsolata](https://github.com/googlefonts/Inconsolata)
+## Source Han Serif
 
 ```bash
-brew install font-inconsolata
+brew install --cask font-source-han-serif-vf
 ```
 
-## [Roboto](https://github.com/googlefonts/roboto-flex)
+## Inconsolata
 
 ```bash
-brew install font-roboto
+brew install --cask font-inconsolata
 ```
 
-## [Meslo for Powerlevel10k](https://github.com/romkatv/powerlevel10k#fonts)
+## Roboto
 
 ```bash
-brew install font-meslo-for-powerlevel10k
+brew install --cask font-roboto
 ```
 
-## [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono)
+## Meslo for Powerlevel10k
 
 ```bash
-brew install font-jetbrains-mono
+brew install --cask font-meslo-for-powerlevel10k
 ```
 
-## [Fira Code](https://github.com/tonsky/FiraCode)
+## JetBrains Mono
 
 ```bash
-brew install font-fira-code
+brew install --cask font-jetbrains-mono
 ```
 
-## [Inter](https://github.com/rsms/inter)
+## Fira Code
 
 ```bash
-brew install font-inter
+brew install --cask font-fira-code
 ```
 
-## [Noto Sans CJK](https://github.com/notofonts/noto-cjk)
+## Inter
 
 ```bash
-brew install font-noto-sans-cjk
+brew install --cask font-inter
 ```
+
+## Noto Sans CJK
+
+```bash
+brew install --cask font-noto-sans-cjk
+```
+
+## References
+
+- [Source Han Sans](https://github.com/adobe-fonts/source-han-sans)
+- [Source Han Serif](https://github.com/adobe-fonts/source-han-serif)
+- [Inconsolata](https://github.com/googlefonts/Inconsolata)
+- [Roboto](https://fonts.google.com/specimen/Roboto)
+- [Meslo for Powerlevel10k](https://github.com/romkatv/powerlevel10k#fonts)
+- [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono)
+- [Fira Code](https://github.com/tonsky/FiraCode)
+- [Inter](https://github.com/rsms/inter)
+- [Noto Sans CJK](https://github.com/notofonts/noto-cjk)

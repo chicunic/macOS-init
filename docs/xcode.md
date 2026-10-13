@@ -1,19 +1,39 @@
 # Xcode
 
-- Install Xcode
+## Xcode App
 
-  - Via App Store (recommended): [Xcode](https://apps.apple.com/app/xcode/id497799835)
+- [App Store](https://apps.apple.com/app/xcode/id497799835)
+- [Specific or beta versions](https://developer.apple.com/download/all/)
 
-  - Download installer (not recommended): [Official website](https://developer.apple.com/xcode/)
+Open Xcode and complete setup, then select its tools:
 
-- Install Xcode Command Line Tools
+```bash
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+```
 
-  ```bash
-  xcode-select --install
-  ```
+Or **Xcode -> Settings -> Locations**: Select the installed version under `Command Line Tools`.
 
-- Show Xcode Command Line Tools path
+Verify:
 
-  ```bash
-  xcode-select -p
-  ```
+```bash
+xcode-select -p
+xcodebuild -version
+```
+
+## Standalone Command Line Tools
+
+Install if you don't need the full Xcode app:
+
+```bash
+xcode-select --install
+```
+
+Select the installed standalone tools:
+
+```bash
+sudo xcode-select --switch /Library/Developer/CommandLineTools
+```
+
+## References
+
+- [Command Line Tools settings](https://developer.apple.com/documentation/xcode/configuring-command-line-tools-settings)

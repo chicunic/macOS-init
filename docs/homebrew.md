@@ -1,60 +1,115 @@
 # Homebrew
 
-- Install Homebrew: [Official website](https://brew.sh/)
+For Apple Silicon and zsh. Source builds require [Xcode or Command Line Tools](xcode.md).
 
-  ```bash
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  ```
+## Install Homebrew
 
-- Set up environment variables
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-  ```bash
-  echo >> ~/.zprofile
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  ```
+Run once to configure `~/.zprofile` and the current shell:
 
-- Install common formulae
+```bash
+echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+```
 
-  ```bash
-  brew install autojump gh tree wget
-  ```
+## Install Formulae
 
-- Install more dev tools
+Common tools:
 
-  ```bash
-  brew install firebase-cli git-filter-repo golangci-lint gopls grpcurl node openjdk pipx protoc-gen-go protoc-gen-go-grpc staticcheck swag swiftformat swiftlint swiftly uv
-  ```
+```bash
+brew install autojump gh tree wget
+```
 
-- Check for formulae updates
+Development tools:
 
-  ```bash
-  brew update
-  brew outdated
-  brew upgrade
-  ```
+```bash
+brew install direnv node openjdk pipx uv
+```
 
-- Enable cask update checking: [buo/cask-upgrade](https://github.com/buo/homebrew-cask-upgrade)
+## Configure Development Tools
 
-  ```bash
-  brew tap buo/cask-upgrade
-  ```
+### pipx
 
-- Check for cask updates
+Add pipx's application directory to `PATH`, then open a new terminal:
 
-  ```bash
-  brew cu -a
-  ```
+```bash
+pipx ensurepath
+```
 
-- Install common casks
+### OpenJDK
 
-  ```bash
-  brew install --cask aldente android-platform-tools antigravity appcleaner chatgpt claude claude-code coconutbattery copilot-cli docker-desktop figma google-chrome google-drive gpg-suite iina iterm2 keka notion onedrive stats typora@dev visual-studio-code vnc-viewer zoom
-  ```
+Register the JDK with macOS:
 
-- Clean up Homebrew cache
+```bash
+sudo mkdir -p /Library/Java/JavaVirtualMachines
+sudo ln -sfn "$(brew --prefix openjdk)/libexec/openjdk.jdk" /Library/Java/JavaVirtualMachines/openjdk.jdk
+/usr/libexec/java_home -V
+```
 
-  ```bash
-  brew cleanup
-  brew cleanup -s --prune=all
-  ```
+To prefer this JDK in `PATH`, add the following to `~/.zshrc`. The [bundled zshrc](../powerlevel10k/zshrc) already includes it:
+
+```zsh
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+```
+
+For native builds that need the JDK headers, set this in the build shell:
+
+```bash
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+```
+
+## Install Casks
+
+```bash
+brew install --cask android-platform-tools appcleaner chatgpt claude claude-code coconutbattery docker-desktop google-chrome google-drive gpg-suite iina iterm2 keka onedrive stats typora@dev visual-studio-code realvnc-connect-viewer
+```
+
+## Upgrade Packages
+
+Standard update check and upgrade:
+
+```bash
+brew update
+brew outdated
+brew upgrade
+```
+
+Set up and trust the third-party `buo/cask-upgrade` command:
+
+```bash
+brew trust --command buo/cask-upgrade/cu
+brew tap buo/cask-upgrade
+```
+
+Review and upgrade casks, including apps with automatic updates:
+
+```bash
+brew cu -a
+```
+
+## Cleanup
+
+Remove old formula versions, stale lock files, and outdated downloads:
+
+```bash
+brew cleanup
+```
+
+Include recent cached downloads; preview before running:
+
+```bash
+brew cleanup --dry-run -s --prune=all
+brew cleanup -s --prune=all
+```
+
+## References
+
+- [Homebrew installation](https://docs.brew.sh/Installation)
+- [Homebrew commands](https://docs.brew.sh/Manpage)
+- [Tap trust](https://docs.brew.sh/Tap-Trust)
+- [pipx installation](https://pipx.pypa.io/latest/how-to/install-pipx.html)
+- [OpenJDK](https://formulae.brew.sh/formula/openjdk)
+- [Cask Upgrade](https://github.com/buo/homebrew-cask-upgrade)

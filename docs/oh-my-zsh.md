@@ -1,44 +1,47 @@
-# oh-my-zsh
+# Oh My Zsh
 
-- Install oh-my-zsh: [Official website](https://ohmyz.sh/#install)
+## Install Oh My Zsh
 
-  ```bash
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  ```
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
-- Reference config: [robbyrussell/zshrc](../robbyrussell/zshrc)
+## Plugins
 
-- Install plugins
+```bash
+brew install autojump direnv
+```
 
-  ```bash
-  # autojump (included in Homebrew formulae)
-  # git (built-in with oh-my-zsh)
-  ```
+In `~/.zshrc`, set this before `source "$ZSH/oh-my-zsh.sh"`:
 
-  Set `plugins=(autojump git)` in `~/.zshrc`.
+```zsh
+plugins=(autojump direnv git)
+```
 
-## powerlevel10k
+## Powerlevel10k
 
-- [Official website](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh)
+```bash
+brew install --cask font-meslo-for-powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+```
 
-- Install fonts
+Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
 
-  ```bash
-  brew install font-meslo-for-powerlevel10k
-  ```
+## Quick Setup
 
-- Install via oh-my-zsh (recommended)
+From the repository root, restore the bundled [zshrc](../powerlevel10k/zshrc) and [p10k.zsh](../powerlevel10k/p10k.zsh):
 
-  ```bash
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-  ```
+```bash
+cp powerlevel10k/zshrc ~/.zshrc
+cp powerlevel10k/p10k.zsh ~/.p10k.zsh
+exec zsh
+```
 
-  Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
+Optional: run `p10k configure` to change the prompt style.
 
-- Initialize
+## References
 
-  ```bash
-  p10k configure
-  ```
-
-- Reference configs: [powerlevel10k/zshrc](../powerlevel10k/zshrc), [powerlevel10k/p10k.zsh](../powerlevel10k/p10k.zsh)
+- [Oh My Zsh installation](https://ohmyz.sh/#install)
+- [Oh My Zsh plugins](https://github.com/ohmyzsh/ohmyzsh#enabling-plugins)
+- [Powerlevel10k installation](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
+- [Powerlevel10k fonts](https://github.com/romkatv/powerlevel10k#fonts)
