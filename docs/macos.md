@@ -1,6 +1,6 @@
 # macOS
 
-For macOS Tahoe 26.
+For macOS Golden Gate 27.
 
 ## Dock
 
@@ -95,6 +95,32 @@ For macOS Tahoe 26.
   defaults write com.apple.finder FinderSpawnTab -bool true; killall Finder
   ```
 
+## Session Restore
+
+Prevent macOS from saving the session's app list at logout, shutdown, or restart and relaunching those apps at the next login:
+
+```bash
+defaults write com.apple.loginwindow TALBlockSavingAndLaunch -bool true
+```
+
+Read the current override without changing it:
+
+```bash
+defaults read com.apple.loginwindow TALBlockSavingAndLaunch
+```
+
+`1` means blocking is enabled; `0` means it is disabled. A missing-key error means no explicit override is stored.
+
+Delete the override to return control to macOS's normal session-restoration settings, including **Reopen windows when logging back in**:
+
+```bash
+defaults delete com.apple.loginwindow TALBlockSavingAndLaunch
+```
+
+If deletion reports that the key does not exist, the override is already absent. Apps configured as Login Items or through LaunchAgents have separate startup settings.
+
+This is an internal `loginwindow` preference. Its save-state handling was checked in macOS 27.2, but restart behavior has not been tested.
+
 ## Settings
 
 - **Accessibility -> Pointer Control -> Trackpad Options**: Check `Use trackpad for dragging`, select `Three Finger Drag`, click `OK`.
@@ -115,10 +141,10 @@ For macOS Tahoe 26.
 
 ## References
 
-- [Screenshot options](https://support.apple.com/guide/mac-help/take-a-screenshot-mh26782/mac)
-- [Finder settings](https://support.apple.com/guide/mac-help/change-finder-settings-on-mac-mchlp2803/26/mac/26)
-- [Clock options](https://support.apple.com/en-mt/guide/mac-help/mchlb3236e90/mac)
-- [Battery percentage](https://support.apple.com/en-jo/guide/mac-help/mchlp1115/mac)
-- [Desktop & Dock](https://support.apple.com/en-gb/guide/mac-help/mchlp1119/mac)
+- [Screenshot options](https://support.apple.com/guide/mac-help/mh26782/mac)
+- [Finder settings](https://support.apple.com/guide/mac-help/mchlp2803/mac)
+- [Clock options](https://support.apple.com/guide/mac-help/mchlb3236e90/mac)
+- [Battery percentage](https://support.apple.com/guide/mac-help/mchlp1115/mac)
+- [Desktop & Dock](https://support.apple.com/guide/mac-help/mchlp1119/mac)
 - [Three-finger drag](https://support.apple.com/102341)
 - [Accessory permissions](https://support.apple.com/102282)

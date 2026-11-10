@@ -1,11 +1,11 @@
 # macOS-init
 
-[![macOS](https://img.shields.io/badge/macOS-Tahoe-blue)](https://www.apple.com/macos/)
+[![macOS](https://img.shields.io/badge/macOS-Golden_Gate-blue)](https://www.apple.com/macos/)
 [![Homebrew](https://img.shields.io/badge/Homebrew-orange?logo=homebrew&logoColor=white)](https://brew.sh/)
 [![Shell](https://img.shields.io/badge/Shell-zsh-green?logo=zsh)](https://www.zsh.org/)
 [![License](https://img.shields.io/github/license/chicunic/macOS-init)](LICENSE)
 
-A setup guide for a new Mac with Apple Silicon and macOS Tahoe 26.
+A setup guide for a new Mac with Apple Silicon and macOS Golden Gate 27.
 
 ## Setup Guides
 
